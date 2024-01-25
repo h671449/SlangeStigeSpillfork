@@ -26,7 +26,7 @@ public class Brett {
     /**
      * Denne metoden representerer en spillers terning kast, og de reglene som må følges per resultatet på dette kastet
      * Den tar inn en spiller som parameter
-     * @param spiller
+     * @param spiller spilleren som triller terning
      */
     public void terningKast(Spiller spiller) {
         // Triller terning
@@ -40,7 +40,7 @@ public class Brett {
 
         // Sjekker om spillet er ferdig.
         if (newPlass == FIN) {
-            System.out.println("Dette er vinneren");
+            System.out.println(spiller.getName() + " is the winner!!");
             winner = true;
             return;
         }
@@ -64,24 +64,25 @@ public class Brett {
         }
 
         spiller.setPlass(newPlass);
+        System.out.println("The new location of player " + spiller.getName() + " is: " + spiller.getPlass());
         //Sjekker om det er trillet 6
         if (randomNr == 6) {
             // straff metoden sjekker om 6 er blitt kastet 3 ganger på rad.
             if (spiller.straff(randomNr)){
                 spiller.setPlass(BEG);
             } else {
-            // En som kaster 6 skal trille på nytt
+                // En som kaster 6 skal trille på nytt
                 terningKast(spiller);
                 return;
             }
         }
+        // Setter telle variabel til 0
         spiller.straff(randomNr);
-    System.out.println("The new location of player " + spiller.getName() + " is: " + spiller.getPlass());
     }
 
     /**
-     * Sjekker om det er deklarert en vinner, denne brukes.
-     * @return
+     * Sjekker om det er deklarert en vinner, denne brukes i spill loopen.
+     * @return returnerer en bool som forteller oss om spillet er over
      */
     public boolean foundWinner() {
         return winner;
