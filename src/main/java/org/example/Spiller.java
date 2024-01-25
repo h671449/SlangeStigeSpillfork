@@ -3,13 +3,13 @@ package org.example;
 public class Spiller {
     private int plass;
     private int antallS;
-    private String navn;
+    private final String navn;
 
     private boolean erFengslet;
 
     /**
      * Initialiserer spiller, tar inn navn på spiller.
-     * @param navn
+     * @param navn navn på spiller
      */
     public Spiller(String navn) {
         this.navn = navn;
@@ -34,10 +34,9 @@ public class Spiller {
      * Tar inn terningkast fra brett, sjekker om det er en 6-er, og inkrementerer antallS som passer på hvor mange 6-ere
      * som har kommet på rad. Setter antallS til 0 om terning != 6, sjekker antallS og rerturnerer en bool avhengig
      * om antallS er > 2 eller ikke.
-     *
      * Denne metoden er også ansvarlig for å sjekke om spiller kan flytte seg fra start etter å få 3 6-ere på rad.
-     * @param kast
-     * @return
+     * @param kast terning kast
+     * @return om denne spilleren får for mange 6-ere
      */
     public boolean straff(int kast) {
         if(kast == 6 && antallS < 3) {

@@ -21,7 +21,7 @@ public class StigeogSlangeSpill {
             if (antall < 2 || 4 < antall){
                 System.out.println("Invalid number!");
             }
-            gyldigSpill = (antall < 2 || 4 < antall) ? false : true;
+            gyldigSpill = antall >= 2 && 4 >= antall;
         }
         // Etter at antall spillere er registrert, må brukere gi navn. Vi gjør dette gjennom en for lokke
         spillere = new Spiller[antall];
@@ -40,8 +40,8 @@ public class StigeogSlangeSpill {
             System.out.println("*****************");
             System.out.println("Round " + antall);
             System.out.println("*****************");
-            for (int i = 0; i < spillere.length; i++) {
-                System.out.println("Player: " + spillere[i].getName() + "'s turn! You are at " + spillere[i].getPlass()
+            for (Spiller spiller : spillere) {
+                System.out.println("Player: " + spiller.getName() + "'s turn! You are at " + spiller.getPlass()
                         + "\n" + "Press enter when you are ready to throw the dice!");
 
                 scan.nextLine();
@@ -52,8 +52,8 @@ public class StigeogSlangeSpill {
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
                 }
-                nyttSpill.terningKast(spillere[i]);
-                if (nyttSpill.foundWinner()){
+                nyttSpill.terningKast(spiller);
+                if (nyttSpill.foundWinner()) {
                     break;
                 }
                 System.out.println();
