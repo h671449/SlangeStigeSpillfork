@@ -46,9 +46,17 @@ public class StigeogSlangeSpill {
 
                 scan.nextLine();
 
-                System.out.println("Dice are thrown...");
+                System.out.print("Dice are thrown");
                 try {
-                    sleep(500);
+                    sleep(300);
+                    System.out.print(".");
+                    sleep(300);
+                    System.out.print(".");
+                    sleep(300);
+                    System.out.println(".");
+                    sleep(350);
+                    System.out.println();
+
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
                 }
