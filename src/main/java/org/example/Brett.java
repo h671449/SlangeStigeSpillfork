@@ -31,7 +31,7 @@ public class Brett {
     public void terningKast(Spiller spiller) {
         // Triller terning
         int randomNr = ThreadLocalRandom.current().nextInt(1, 7);
-        System.out.println(spiller.getName() + " fikk " + randomNr + " på terningen!");
+        System.out.println(spiller.getName() + " got " + randomNr + " on the dice!");
         int newPlass = spiller.getPlass() + randomNr;
 
         if (spiller.straff(randomNr)){

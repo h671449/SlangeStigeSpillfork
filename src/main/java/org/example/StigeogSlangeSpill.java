@@ -16,37 +16,37 @@ public class StigeogSlangeSpill {
 
         // While lokken er brukt for å sikre at brukere gir et antall spillere for de fortsetter.
         while (!gyldigSpill) {
-            System.out.println("Hvor mange spillere er det ønsket? Min 2, Maks 4");
+            System.out.println("How many players do you want? Min 2, Maxs 4");
             antall = scanInt.nextInt();
             if (antall < 2 || 4 < antall){
-                System.out.println("Ugyldig antall!");
+                System.out.println("Invalid number!");
             }
             gyldigSpill = (antall < 2 || 4 < antall) ? false : true;
         }
         // Etter at antall spillere er registrert, må brukere gi navn. Vi gjør dette gjennom en for lokke
         spillere = new Spiller[antall];
         for (int i = 0; i < spillere.length; i++) {
-            System.out.println("Navn på spiller " + (i+1));
+            System.out.println("Name of the player: " + (i+1));
             String navn = scan.nextLine();
             spillere[i] = new Spiller(navn);
-            System.out.println("Håper du har det gøy " + spillere[i].getName() + "!");
+            System.out.println("Hope you have fun, " + spillere[i].getName() + "!");
         }
         // Gjennbruker antall variablet for a telle runder
         antall = 1;
-        System.out.println("Spillet begynner!");
+        System.out.println("The game begins!");
         // Dette er selve game loopen, while brukes for å holde spillet i gang, for loopen brukes for å velge spilleren
         // som skal spille. sleep metoden brukes for å "simulere" selve kastet på terningen.
         while (!nyttSpill.foundWinner()) {
             System.out.println("*****************");
-            System.out.println("Runde " + antall);
+            System.out.println("Round " + antall);
             System.out.println("*****************");
             for (int i = 0; i < spillere.length; i++) {
-                System.out.println("Spiller: " + spillere[i].getName() + " sinn tur! Du står på plass " + spillere[i].getPlass()
-                        + "\n" + "Press enter når du er klar til å trille!");
+                System.out.println("Player: " + spillere[i].getName() + "'s turn! You are at " + spillere[i].getPlass()
+                        + "\n" + "Press enter when you are ready to throw the dice!");
 
                 scan.nextLine();
 
-                System.out.println("Triller...");
+                System.out.println("Dice are thrown...");
                 try {
                     sleep(500);
                 } catch (InterruptedException e) {
