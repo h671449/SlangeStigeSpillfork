@@ -16,11 +16,16 @@ public class Brett {
      */
     public Brett() {
         // Enkel testverdier for slanger/stiger
-        events.put(10, 40);
-        events.put(50, -30);
-        events.put(30, -10);
-        events.put(25, 31);
+        events.put(80, 19);
+        events.put(98, -19);
+        events.put(94, -19);
+        events.put(93, -20);
+        events.put(87, -10);
+        events.put(50, 60);
+        events.put(20, 88);
         events.put(12, 40);
+        events.put(24, 4);
+        events.put(40, 20);
     }
 
     /**

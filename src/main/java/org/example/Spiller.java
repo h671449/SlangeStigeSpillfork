@@ -5,7 +5,6 @@ public class Spiller {
     private int antallS;
     private final String navn;
 
-    private boolean erFengslet;
 
     /**
      * Initialiserer spiller, tar inn navn på spiller.
@@ -15,7 +14,6 @@ public class Spiller {
         this.navn = navn;
         plass = 1;
         antallS = 0;
-        erFengslet = false;
     }
 
     public int getPlass() {
