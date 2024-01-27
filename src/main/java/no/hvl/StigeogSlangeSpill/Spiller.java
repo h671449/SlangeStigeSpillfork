@@ -1,4 +1,4 @@
-package org.example;
+package no.hvl.StigeogSlangeSpill;
 
 public class Spiller {
     private int plass;
