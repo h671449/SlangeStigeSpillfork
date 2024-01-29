@@ -48,7 +48,7 @@ public class StigeogSlangeSpill {
             System.out.println("How many players do you want? Min 2, Maxs 4");
             antall = scanInt.nextInt();
             if (antall < 2 || 4 < antall){
-                System.out.println("Invalid number!");
+                System.err.println("Invalid number!");
             }
             gyldigSpill = antall >= 2 && 4 >= antall;
         }
